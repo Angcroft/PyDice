@@ -8,20 +8,17 @@ def showDices():
 def input_user():
     while True:
         showDices()
-        try:
-            diceType = input("Input the desired faces of dice: ").upper()
-            if diceType in dice:
-                faces = dice[diceType]
-            else:
-                print(f"Type of dice '{diceType}' is not valid. Try again.")
-                continue
+        diceType = input("Input the desired faces of dice: ").upper()
+        if diceType not in DICE:
+            print(f"Type of dice '{diceType}' is not valid. Try again.")
+            continue
 
+
+        try:
             numroll = int(input("Input how many rolls you want to make: "))
             if numroll > 0:
-                return faces, numroll
-            else:
-                print("The number of rolls must be a positive integer,")
-
+                return DICE[diceType], numroll
+            print("The number of rolls must be a positive integer.")
         except ValueError:
             print("Invalid input. Please, enter integer numbers.")
 
