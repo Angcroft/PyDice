@@ -121,7 +121,6 @@ This file contains the logic for simulating the dice rolls
 ```sh
 import random
 
-# Diccionario que mapea los tipos de dados a su número de caras
 DICE = {
     'D4': 4,
     'D6': 6,
